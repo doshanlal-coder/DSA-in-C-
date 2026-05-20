@@ -71,8 +71,11 @@
 //     cin>>n;
 
 //     for(int m=0; m<n; m++){
+//         for(int z=n-m ;z>0 ; z-- ){
+//             cout<<"  ";
+//         }
 //         for(int t=0;t<=m; t++){
-//             cout<<" "<<fac(m,t)<<" ";
+//             cout<<"  "<<fac(m,t)<<"  ";
 //         }
 //         cout<<endl;
 //     }
