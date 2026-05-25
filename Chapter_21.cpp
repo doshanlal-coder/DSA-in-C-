@@ -53,3 +53,8 @@
 
 
 ///the above q can be solved by different three method ....M (2) Prefix sum.. 
+
+
+////some modification...
+//1. Boundary condition
+//2. specify indexing 0 to n or 1 to n;
