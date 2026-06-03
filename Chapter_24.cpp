@@ -32,11 +32,49 @@ using namespace std;
 // }
 
 
-int main (){
-    int y=100;
-    int *ptr=&y;
+// int main (){
+//     int y=100;
+//     int *ptr=&y;
 
-    cout<<ptr;
-    cout<<endl;
-    cout<<&y;
-}
+//     cout<<ptr;
+//     cout<<endl;
+//     cout<<&y;
+// }
+
+
+
+///we can't store one datatype address to other data type pointer
+
+
+
+//accessing data through a pointer
+//Dereference operator   (is itself *)
+//using * with pointer itself will give the value stored at that pointer
+//eg.
+// int main (){
+//     int x=100;
+//     int *ptr =&x;
+
+//     cout<<"Address= "<<ptr<<endl;
+//     cout<<"Value= "<<*ptr;     //this * is called dereference operator 
+//     return 0;
+// }
+
+
+
+////Performin operation using pointer
+
+// int main (){
+//     int x=100;
+//     int y=24;
+//     int *ptrX=&x;
+//     int *ptrY=&y;
+
+//     int result= *ptrX+ *ptrY ;
+//     int *ResPtr= &result;
+//     cout<<result<<endl;
+//     cout<<*ResPtr;
+//     return 0;
+// }
+
+
