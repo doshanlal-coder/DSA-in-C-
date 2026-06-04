@@ -40,3 +40,72 @@ using namespace std;
 // }
 
 
+/// Use 2;  using two pointer method to find first and last occurence of a character in a given string.
+
+// void FirstAndLast(string a, int *pF, int *pL, char ch){
+//     //finding first occurence
+//     for(int i=0; i<=sizeof(a); i++){
+//         if(ch==a[i]){
+//             *pF=i;
+//             break;
+//         }
+//     }
+//     for(int i=a.length()-1; i>=0; i--){
+//         if(ch==a[i]){
+//             *pL=i;
+//             break;
+//         }
+//     }
+// }
+// int main (){
+//     string a= "bbaaa";
+//     int first=-1;
+//     int last=-1;
+//     char ch='a';
+//     int *pF=&first;
+//     int *pL=&last;
+//     FirstAndLast(a,pF,pL,ch);
+//     cout<<"First: "<<*pF<<endl;
+//     cout<<"Last: "<<*pL<<endl;
+//     return 0;
+
+// }
+
+
+
+
+////Pointer Arithmetic;
+
+//Increment and decrement;
+// int main (){
+//     int x=10;
+//     int *ptr=&x;
+//     cout<<*ptr<<endl;   //same address
+
+//     ptr++;
+//     cout<<*ptr<<endl;  //subsequent next address
+
+//     ptr--;
+//     cout<<*ptr<<endl;   // just previous address value
+
+//     return 0;
+// }
+
+
+int main (){
+    int x=10;
+    int *ptr=&x;
+    cout<<ptr<<endl;   //same address
+
+    ptr++;
+    cout<<ptr<<endl;  //subsequent next address
+
+    ptr-1;
+    cout<<ptr<<endl;   // just previous address value
+
+    return 0;
+}
+
+
+
+
