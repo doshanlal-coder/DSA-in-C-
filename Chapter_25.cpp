@@ -92,20 +92,59 @@ using namespace std;
 // }
 
 
-int main (){
-    int x=10;
-    int *ptr=&x;
-    cout<<ptr<<endl;   //same address
+// int main (){
+//     int x=10;
+//     int *ptr=&x;
+//     cout<<ptr<<endl;   //same address
 
-    ptr++;
-    cout<<ptr<<endl;  //subsequent next address
+//     ptr+1;
+//     cout<<ptr<<endl;  //subsequent next address
 
-    ptr-1;
-    cout<<ptr<<endl;   // just previous address value
+//     ptr-1;
+//     cout<<ptr<<endl;   // just previous address value
 
-    return 0;
-}
-
-
+//     return 0;
+// }
 
 
+
+
+//accesing elements of an array using arithmetic operation;
+
+// int main (){
+//     int arr[3]={1,2,3};
+//     int *ptr=&arr[0];
+//     for(int i=0; i<=sizeof(arr)/4-1;i++){
+//         cout<<*ptr<<endl;
+//         ptr+=1;
+//     }
+// }
+
+
+
+
+
+//some special operation
+
+
+//  *ptr++     : first dereferencing then increasing value by 1
+//  (*ptr)++   : first dereferencing then increasing value by 1
+//  * ++ptr    : first move pointer by fout byte (for int) then dereferencing
+//  ++ *ptr    : first dereferencing then increment the actual value store there
+
+
+
+////arrays as pointer
+
+
+//name sof an array is the address or the pointer of its zeroth index elements;
+
+// int main (){
+//     int arr[5]={1,2,3,4,5};
+//     cout<<arr<<endl;
+//     cout<<*arr<<endl;
+
+//     int *ptr=&arr[0];
+//     cout<<ptr<<endl;
+//     cout<<*ptr<<endl;
+// }
