@@ -50,3 +50,17 @@ using namespace std;
 // }
 
 
+///Problem//  Print the maximum value of array {3,10,3,2,5};
+// int fun(int *arr, int idx, int length){
+//     if(idx==length-1) return arr[idx] ;
+
+//     return max(arr[idx],fun(arr,idx+1,length));
+
+// }
+// int main (){
+//     int arr[]={3,10,3,2,5};
+//     int length = sizeof(arr)/4;
+//     int idx=0;
+//     cout<<"Max:"<<fun(arr,idx,length);
+//     return 0;
+// }
