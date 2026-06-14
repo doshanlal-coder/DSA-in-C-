@@ -35,3 +35,32 @@ int main (){
 
     return 0;
 }
+
+//Maximum number of swaps in worst case in Bubble Sort
+
+//in case when all elements are in decreasing order
+
+//eg.  5 4 3 2 1      ----  4 swaps to take 5 at end        (n-1)   
+//     4 3 2 1 5      ----  3 swaps to take 4 at 2nd end    (n-2)
+//     3 2 1 4 5      ----  2 swaps to take 4 at 3rd end    ...... and so on up to
+//     2 1 3 4 5      ----  1 swaps to take 4 at 4th end    ............  1 
+//     1 2 3 4 5            No further swaps
+// Total Maximum Number of Swap ==  1+2+3+4.........+(n-1)== (n-1)(n)/2             using n(n+1)/2
+
+
+
+//********************************************/
+
+
+//Time Complexity 
+
+// O(n*n)== Worst case time complexity
+
+//*******************************************/
+
+//Space Complexity
+
+//Since we are not using any extra space , only the input vector
+//Therefor O(1)
+
+//********************************************/
