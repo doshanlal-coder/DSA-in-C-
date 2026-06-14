@@ -10,19 +10,24 @@ using namespace std;
 
 
 #include <vector>
-int bubbleSort(vector <int> &vec, int i, int n){
-    if(i==n-1) return vec[i];
+void bubbleSort(vector <int> &vec,int n){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n-i-1; j++){
 
-    if(vec[i]>vec[i+1]){
-        swap(vec[i],vec[i+1]);
-    }
-    return bubbleSort(vec, i+1, n);
-
+            if(vec[j]>vec[j+1]){
+                swap(vec[j],vec[j+1]);
+}}}
+    return ;
 }
 int main (){
-    vector <int> vec={4,3,2,5,6,1};
-    int n=vec.size();
-    bubbleSort(vec,0,n);
+    int n;
+    cin>>n;
+
+    vector <int> vec(n);
+    for(int i=0; i<n; i++){
+        cin>>vec[i];
+    }
+    bubbleSort(vec,n);
 
     for(int i=0; i<n; i++){
         cout<<vec[i]<<" ";
