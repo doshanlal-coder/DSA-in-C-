@@ -30,15 +30,10 @@ int main (){
 }
 
 
-//Total iteration == (n)(n-1)/2
+//Total iteration == (n)(n-1)/2  == sum of natural numbers from 1 to n-1
 
 //Time complexity : O(n*n)
 //Space Complexity: O(1)
 
 //It is unstable Sorting algorithm.
 
-
-
-
-//Application Of Selection Sort
-//== 
