@@ -8,17 +8,3 @@
 
 #include <iostream>
 using namespace std;
-
-// int binarySearch(int *arr,int target, int lo, int hi){
-//     int mid= (hi+lo)/2;
-//     if(lo>=hi) return [-1,-1];
-//     if()
-    
-// }
-// int main (){
-//     int arr[]={1,2,3,3,3,5,11};
-//     int target;
-//     cin>>target;
-//     cout<<binarySearch(arr,target,0,sizeof(arr)/sizeof(arr[0]));
-
-// }
