@@ -1,4 +1,4 @@
-//Strings
+// Strings
 
 // #include <iostream>
 // using namespace std;
@@ -12,8 +12,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-//#########################
+// #########################
 
 /*REMOVE THIS And
 
@@ -28,7 +27,7 @@ int main (){
 
     // //substr(position, length)
     string str2= "DoshanLalSahu";
-    cout<<str2.substr(0,6)<<endl; 
+    cout<<str2.substr(0,6)<<endl;
 
     //strcat()  :: to append s2 in s1 character array
     char s1[20]="Doshan";
@@ -57,17 +56,17 @@ int main (){
 
 REMOVE THIS @nd*/
 
-//###########################################
-//PROBLEMS
-//###########################################
+// ###########################################
+// PROBLEMS
+// ###########################################
 
-//Problem 1? given a string str, sort thr given string
-//constraints: the string will contain only characters from a-z.
+// Problem 1? given a string str, sort thr given string
+// constraints: the string will contain only characters from a-z.
 
 // int main (){
 //     string str;
 //     getline(cin, str);
-    
+
 //     //using count sorting algorithm
 //     //ASCII value for a=97,b=98, ...... ,  and so on.
 //     string Nstr="";
@@ -91,16 +90,15 @@ REMOVE THIS @nd*/
 //     cout<<sttr;
 // }
 
+// Problem? Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
-//Problem? Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+// constraint: strings s and t have characters from a-z;
 
-//constraint: strings s and t have characters from a-z;
+// input: s= "anagram"  t= "nagaram"
+// output: YES
 
-//input: s= "anagram"  t= "nagaram"
-//output: YES
-
-//input: s= "bank"  t= "atm"
-//output: NO
+// input: s= "bank"  t= "atm"
+// output: NO
 
 // int main (){
 //     string s,t;
@@ -119,14 +117,14 @@ REMOVE THIS @nd*/
 //         cout<<"YES";
 //     }
 // }
-//O(N logN)
+// O(N logN)
 
-//optimizing this approch
+// optimizing this approch
 
 // int main (){
 //     string s,t;
-    // getline(cin,s);
-    // getline(cin,t);
+// getline(cin,s);
+// getline(cin,t);
 //     if (s.length() != t.length()) {
 //         cout << "NO";
 //         return 0;
@@ -147,13 +145,12 @@ REMOVE THIS @nd*/
 
 // }
 
-//O(N)
+// O(N)
 
+// Problem? given twon stirngs s and t, determine if they are isomorphic
 
-//Problem? given twon stirngs s and t, determine if they are isomorphic
-
-//Input: s="egg" t="add"
-//Output: YES
+// Input: s="egg" t="add"
+// Output: YES
 
 // bool check(string s, string t){
 //     int arrS[1000]={};
@@ -185,3 +182,31 @@ REMOVE THIS @nd*/
 //     return 0;
 
 // }
+
+// Problem / Given an array of strings. Write a program to find the longest common prefix string amongst an array of strings.
+
+// Input: arr=["flower","flight","flask"]
+// Output: "fl"
+
+// int main()
+// {
+//     string arr[3] = {"flower", "flight", "flask"};
+//     // cout<<arr[0][0];
+//     string one = arr[0];
+
+//     for (int i = 0; i < one.length(); i++)
+//     {
+
+//         for (int j = 1; j < 3; j++)//instead of 3 do write n i.e. size of array.
+//         {
+//             if(arr[j][i]==one[i]){
+//                 continue;
+//             }else{
+//                 return 0;
+//             }
+//         }
+//         cout<<one[i];
+//     }
+// }
+
+
