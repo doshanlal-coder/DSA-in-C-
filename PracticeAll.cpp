@@ -112,3 +112,32 @@ using namespace std;
 //     }
 // }
 
+
+
+//Practicing Linked List
+
+// class Node{
+//     public:
+//     int val;
+//     Node *next;
+//     Node(int data){
+//         val=data;
+//         next=nullptr;
+//     }
+// };
+// int main (){
+//     Node *n1 = new Node(1);
+//     Node *n2 = new Node(2);
+//     Node *n3 = new Node(3);
+
+//     n1->next= n2;
+//     n2->next= n3;
+
+//     Node *temp=n1;
+//     while (temp!=nullptr){
+//         cout<<temp->val;
+//         temp=temp->next;
+//     }
+//     return 0;
+    
+// }

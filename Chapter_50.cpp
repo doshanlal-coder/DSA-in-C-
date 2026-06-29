@@ -1,0 +1,102 @@
+//    LINKED LIST     //
+
+// Implementation Of a Listnode in a singly linked list
+
+
+
+
+
+
+
+
+
+/* *************************************************************************************************
+remove1
+
+
+#include <iostream>
+using namespace std;
+
+// Define what a single "Node" (train car) looks like
+class Node
+{
+public:
+    int val;    // This stores our actual data (the integer)
+    Node *next; // This is a pointer that holds the memory address of the next node
+
+    // The constructor: runs automatically when we create a new node
+    Node(int data)
+    {
+        val = data;   // Set the node's value to the data we passed in
+        next = nullptr;  // By default, a new node doesn't point to anything yet
+    }
+};
+
+int main()
+{
+    // STEP 1: Create 5 independent nodes out in the permanent memory (Heap)
+    // n1, n2, etc., are just pointers holding the memory addresses of these nodes
+    Node *n1 = new Node(1); 
+    Node *n2 = new Node(2);
+    Node *n3 = new Node(3);
+    Node *n4 = new Node(4);
+    Node *n5 = new Node(5);
+
+    // STEP 2: Link the nodes together to form a chain (Linked List)
+    n1->next = n2; // n1 now points to n2
+    n2->next = n3; // n2 now points to n3
+    n3->next = n4; // n3 now points to n4
+    n4->next = n5; // n4 now points to n5
+                   // Note: n5->next is still NULL (the end of the chain)
+
+    // STEP 3: Create a traveler pointer named 'temp' and start it at the beginning (n1)
+    Node *temp = n1;
+
+    // STEP 4: Loop through the chain until 'temp' hits a dead end (nullptr)
+    while(temp != nullptr){
+        cout << temp->val;  // 1. Print the value of the node 'temp' is currently looking at
+        temp = temp->next;  // 2. Move 'temp' forward to the next node's address
+    }
+    
+
+    //We can also use such loop (But NOT RECOMMENDED)!
+        // for(int i=0; i<5; i++){
+    //     cout<<temp->val;
+    //     temp= temp->next;
+    // }
+
+
+    return 0; // End the program
+}
+
+
+*************************************************************************************************
+//remove2
+// */ 
+
+
+
+
+//*************************************************************************************************
+//Traversing in a singly linked list
+
+
+//in int main function
+
+    // // STEP 3: Create a traveler pointer named 'temp' and start it at the beginning (n1)
+    // Node *temp = n1;
+
+    // // STEP 4: Loop through the chain until 'temp' hits a dead end (nullptr)
+    // while(temp != nullptr){
+    //     cout << temp->val;  // 1. Print the value of the node 'temp' is currently looking at
+    //     temp = temp->next;  // 2. Move 'temp' forward to the next node's address
+    // }
+
+
+//*************************************************************************************************
+
+
+//*************************************************************** */
+//Insertion at kth position in a singly linked list
+
+
