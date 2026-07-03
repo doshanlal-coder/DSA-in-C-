@@ -229,7 +229,6 @@ int main()
 //     new_node->next = temp->next;
 //     temp->next = new_node;
 
-
 // }
 // void display(Node *head)// passing by values as we just need to display it.
 // {
@@ -253,25 +252,77 @@ int main()
 
 //     insert_at_k(head, 999, 2);
 //     display(head);
-//     return 0; 
+//     return 0;
 
 // }
 
-
-
-
-
-//UPDATION AT kTH PoSITION
-//traverse till k and update the new value to it.
-
-
-
-
-
+// UPDATION AT kTH PoSITION
+// traverse till k and update the new value to it.
 
 ////DELETION AT kTH PoSITION
 //(1) deleting head =  then create a new pointer to point the head and shift head to second elements, at the end free the temp pointer
 
 // free(temp);
 
+//(2) deleting at kth position = same as above but required traversing
 
+// PROBLEM 1> given a linked list, delete every alternate element from the list starting from second elements
+// eg. list = 1 2 3 4 5 6
+// after deltion = 1 3 5
+
+#include <iostream>
+using namespace std;
+class Node
+{
+public:
+    int val;
+    Node *next;
+    Node(int val)
+    {
+        this->val = val;
+        next = nullptr;
+    }
+};
+
+void insert_at_head(Node *&head, int val)// passing by reference as we have to make changes in the linked list.
+{
+    Node *new_node = new Node(val);
+    new_node->next = head; //new node k agle wale value ko head k equal kr diya
+    head = new_node;// head ko ab  redifine kr rhe , ki inserted value head hai
+}
+
+void display(Node *head)// passing by values as we just need to display it.
+{
+    Node *temp = head;
+    while (temp != nullptr)
+    {
+        cout << temp->val << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+void ans(Node *&head){
+
+    Node *temp= head->next;
+    while(temp != nullptr){
+        temp = temp->next->next;
+        // delete ;
+    }
+}
+
+int main (){
+    Node *head = nullptr;
+    insert_at_head(head,1);
+    insert_at_head(head,2);
+    insert_at_head(head,3);
+    insert_at_head(head,4);
+    insert_at_head(head,5);
+    insert_at_head(head,6);
+    insert_at_head(head,7);
+    insert_at_head(head,8);
+
+    display(head);
+    ans(head);
+    display(head);
+    return 0;
+}
