@@ -84,8 +84,6 @@ int main()
 
 //*************************************************************** */
 
-// Insertion at kth position in a singly linked list
-
 //(1) at starting or at tail
 
 // #include <iostream>
@@ -137,45 +135,143 @@ int main()
 
 //(2) inserting at tail position
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-class Node
-{
-public:
-    int val;
-    Node *next;
-    Node(int val)
-    {
-        this->val = val;
-        next = nullptr;
-    }
-};
-void insert_at_tail(Node *&head, int val){
-    Node *new_node = new Node(val);
-    head = new_node;
-}
-void display(Node *head)// passing by values as we just need to display it.
-{
-    Node *temp = head;
-    while (temp != nullptr)
-    {
-        cout << temp->val << " -> ";
-        temp = temp->next;
-    }
-    cout << "NULL" << endl;
-}
-int main()
-{
-    Node *head = NULL; //created a linked list with no data
-    insert_at_tail(head, 10);
-    display(head);
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+// void insert_at_tail(Node *&head, int val){
+//     Node *new_node = new Node(val);
 
-    insert_at_tail(head, 20);
-    display(head);
+//     //if the list is empty
+//     if(head == nullptr){
+//         head = new_node;
+//         return ;
+//     }
+//     //if it is not empty, then traversing to the end of the list
+//     Node *temp = head;
+//     while(temp->next != nullptr){
+//         temp = temp->next;
 
-    insert_at_tail(head, 30);
-    display(head);
+//     }
+//     temp->next  = new_node;
+// }
+// void display(Node *head)// passing by values as we just need to display it.
+// {
+//     Node *temp = head;
+//     while (temp != nullptr)
+//     {
+//         cout << temp->val << " -> ";
+//         temp = temp->next;
+//     }
+//     cout << "NULL" << endl;
+// }
+// int main()
+// {
+//     Node *head = NULL; //created a linked list with no data
+//     insert_at_tail(head, 10);
+//     display(head);
 
-    return 0;
-}
+//     insert_at_tail(head, 20);
+//     display(head);
+
+//     insert_at_tail(head, 30);
+//     display(head);
+
+//     return 0;
+// }
+
+//(3) // Insertion at kth position in a singly linked list
+
+// #include <iostream>
+// using namespace std;
+
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+// void insert_at_k(Node *&head, int val, int k){
+//     Node *new_node = new Node(val);
+
+//     if(k == 0){
+//         new_node->next = head;
+//         head = new_node;
+//         return ;
+//     }
+
+//     int run = 0;
+//     Node *temp = head;
+//     while(run < k-1 && temp!= nullptr){
+//         temp = temp->next;
+//         run ++;
+//     }
+//     if(temp == nullptr){
+//         cout<<"ERROR\n";
+//         delete new_node;
+//         return;
+//     }
+//     new_node->next = temp->next;
+//     temp->next = new_node;
+
+
+// }
+// void display(Node *head)// passing by values as we just need to display it.
+// {
+//     Node *temp = head;
+//     while (temp != nullptr)
+//     {
+//         cout << temp->val << " -> ";
+//         temp = temp->next;
+//     }
+//     cout << "NULL" << endl;
+// }
+// int main (){
+//     Node *head = new Node(0);
+//     Node *n2 = new Node(1);
+//     Node *n3 = new Node(2);
+//     Node *n4 = new Node(3);
+
+//     head->next = n2;
+//     n2->next = n3;
+//     n3->next = n4;
+
+//     insert_at_k(head, 999, 2);
+//     display(head);
+//     return 0; 
+
+// }
+
+
+
+
+
+//UPDATION AT kTH PoSITION
+//traverse till k and update the new value to it.
+
+
+
+
+
+
+////DELETION AT kTH PoSITION
+//(1) deleting head =  then create a new pointer to point the head and shift head to second elements, at the end free the temp pointer
+
+// free(temp);
+
+
