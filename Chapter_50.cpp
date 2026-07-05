@@ -270,6 +270,218 @@ int main()
 // eg. list = 1 2 3 4 5 6
 // after deltion = 1 3 5
 
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+
+// void insert_at_head(Node *&head, int val)// passing by reference as we have to make changes in the linked list.
+// {
+//     Node *new_node = new Node(val);
+//     new_node->next = head; //new node k agle wale value ko head k equal kr diya
+//     head = new_node;// head ko ab  redifine kr rhe , ki inserted value head hai
+// }
+
+// void display(Node *head)// passing by values as we just need to display it.
+// {
+//     Node *temp = head;
+//     while (temp != nullptr)
+//     {
+//         cout << temp->val << " -> ";
+//         temp = temp->next;
+//     }
+//     cout << "NULL" << endl;
+// }
+// void ans(Node *&head){
+//     if(head == nullptr or head->next == nullptr){
+//         return;
+//     }
+
+//     Node *temp= head;
+
+//     while(temp != nullptr && head->next != nullptr ){
+//         Node *deletenode = temp->next;
+
+//         //linking the first node directly to  the third node
+//         temp->next = temp->next->next;
+
+//         //the alternate node is free and is floating, so we can dlt it
+//         free(deletenode);
+
+//         //now moving the temp pointer
+//         temp = temp->next;
+//     }
+// }
+
+// int main (){
+//     Node *head = nullptr;
+//     insert_at_head(head,1);
+//     insert_at_head(head,2);
+//     insert_at_head(head,3);
+//     insert_at_head(head,4);
+//     insert_at_head(head,5);
+//     insert_at_head(head,6);
+//     insert_at_head(head,7);
+//     insert_at_head(head,8);
+
+//     display(head);
+//     ans(head);
+//     display(head);
+//     return 0;
+// }
+
+// Problem// given the head of a sorted linked list, delete all duplicates such that each element appears only once. return the linked list sorted as well
+
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+// void dupli(Node *&head)
+// {
+
+//     Node *temp = head;
+//     while(temp != nullptr && temp->next != nullptr){
+//         if((temp->val) == (temp->next->val)){
+//             Node *del = temp->next;
+
+//             temp->next = temp->next->next;
+
+//             delete del;
+//         }
+//         else{
+//             temp = temp->next;
+//         }
+//     }
+// }
+// void insert_at_head(Node *&head, int val) // passing by reference as we have to make changes in the linked list.
+// {
+//     Node *new_node = new Node(val);
+//     new_node->next = head; // new node k agle wale value ko head k equal kr diya
+//     head = new_node;       // head ko ab  redifine kr rhe , ki inserted value head hai
+// }
+
+// void display(Node *head) // passing by values as we just need to display it.
+// {
+//     Node *temp = head;
+//     while (temp != nullptr)
+//     {
+//         cout << temp->val << " -> ";
+//         temp = temp->next;
+//     }
+//     cout << "NULL" << endl;
+// }
+// int main()
+// {
+//     Node *head = nullptr;
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 1);
+
+//     display(head);
+
+//     dupli(head);
+
+//     display(head);
+//     return 0;
+// }
+
+
+
+
+
+
+
+//Traversing in reverse order 
+
+// given the head of a singly linked list, print the list in reversed order.
+
+
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+// void revPrint(Node *&head){
+//     if(head == nullptr) 
+//     {
+//         return ;
+//     } 
+    
+//     revPrint(head->next);
+//     cout<<head->val<<" -> ";
+
+// }
+// void insert_at_head(Node *&head, int val) // passing by reference as we have to make changes in the linked list.
+// {
+//     Node *new_node = new Node(val);
+//     new_node->next = head; // new node k agle wale value ko head k equal kr diya
+//     head = new_node;       // head ko ab  redifine kr rhe , ki inserted value head hai
+// }
+// void display(Node *head) // passing by values as we just need to display it.
+// {
+//     Node *temp = head;
+//     while (temp != nullptr)
+//     {
+//         cout << temp->val << " -> ";
+//         temp = temp->next;
+//     }
+//     cout << "NULL" << endl;
+// }
+
+
+// int main()
+// {
+//     Node *head = nullptr;
+//     insert_at_head(head, 8);
+//     insert_at_head(head, 7);
+//     insert_at_head(head, 6);
+//     insert_at_head(head, 5);
+//     insert_at_head(head, 4);
+//     insert_at_head(head, 3);
+//     insert_at_head(head, 2);
+//     insert_at_head(head, 1);
+
+//     display(head);
+//     revPrint(head);
+//     cout<<"NULL";
+//     return 0;
+// }
+
+
+
+////REVERSING THE LINKED LISt
+
 #include <iostream>
 using namespace std;
 class Node
@@ -283,15 +495,31 @@ public:
         next = nullptr;
     }
 };
+void revPrint(Node *&head){
+if (head == nullptr || head->next == nullptr) {
+        return; 
+    }
 
-void insert_at_head(Node *&head, int val)// passing by reference as we have to make changes in the linked list.
+    Node *curr = head;
+    Node *pre = nullptr;
+    Node *next = nullptr; // Initialize as nullptr safely
+
+    while (curr != nullptr) {
+        next = curr->next;  // 1. Save the next node safely
+        curr->next = pre;   // 2. Reverse the pointer
+        pre = curr;         // 3. Move pre forward
+        curr = next;        // 4. Move curr forward
+    }
+
+    head = pre; // 5. Update the head to point to the new front of the list
+}
+void insert_at_head(Node *&head, int val) // passing by reference as we have to make changes in the linked list.
 {
     Node *new_node = new Node(val);
-    new_node->next = head; //new node k agle wale value ko head k equal kr diya
-    head = new_node;// head ko ab  redifine kr rhe , ki inserted value head hai
+    new_node->next = head; // new node k agle wale value ko head k equal kr diya
+    head = new_node;       // head ko ab  redifine kr rhe , ki inserted value head hai
 }
-
-void display(Node *head)// passing by values as we just need to display it.
+void display(Node *head) // passing by values as we just need to display it.
 {
     Node *temp = head;
     while (temp != nullptr)
@@ -301,28 +529,25 @@ void display(Node *head)// passing by values as we just need to display it.
     }
     cout << "NULL" << endl;
 }
-void ans(Node *&head){
 
-    Node *temp= head->next;
-    while(temp != nullptr){
-        temp = temp->next->next;
-        // delete ;
-    }
-}
 
-int main (){
+int main()
+{
     Node *head = nullptr;
-    insert_at_head(head,1);
-    insert_at_head(head,2);
-    insert_at_head(head,3);
-    insert_at_head(head,4);
-    insert_at_head(head,5);
-    insert_at_head(head,6);
-    insert_at_head(head,7);
-    insert_at_head(head,8);
+    insert_at_head(head, 8);
+    insert_at_head(head, 7);
+    insert_at_head(head, 6);
+    insert_at_head(head, 5);
+    insert_at_head(head, 4);
+    insert_at_head(head, 3);
+    insert_at_head(head, 2);
+    insert_at_head(head, 1);
 
     display(head);
-    ans(head);
+
+    revPrint(head);
+
     display(head);
     return 0;
 }
+
