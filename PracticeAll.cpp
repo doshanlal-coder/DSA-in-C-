@@ -141,3 +141,68 @@ using namespace std;
 //     return 0;
     
 // }
+
+//
+#include <iostream>
+using namespace std;
+class Node
+{
+public:
+    int val;
+    Node *next;
+    Node(int val)
+    {
+        this->val = val;
+        next = nullptr;
+    }
+};
+
+/////brutfoce method
+void intersection1(Node *&head1,Node *&head2){
+    Node *temp1 = head1;
+
+    while(temp1 != nullptr){
+        Node *temp2 = head2;
+
+        while (temp2 != nullptr){
+            if(temp1 == temp2){
+                cout<<temp1->val;
+                return;
+            }
+            temp2 = temp2->next;
+
+        }
+        temp1 = temp1->next;
+        
+    }
+    cout<<"null";
+
+}
+
+int main()
+{
+    Node *h11 = new Node(2);
+    Node *h12 = new Node(3);
+    Node *h13 = new Node(4);
+    Node *h14 = new Node(5);
+    Node *h15 = new Node(6);
+    Node *h16 = new Node(1);
+
+    Node *h21 = new Node(4);
+    Node *h22 = new Node(5);
+    Node *h23 = new Node(6);
+
+    h11->next = h12;
+    h12->next = h13;
+    h13->next = h14;
+    h14->next = h15;
+    h15->next = h16;
+
+    h21->next = h22;
+    h22->next = h23;
+    h23->next = h13;
+
+
+    intersection1(h11 , h21);
+    return 0;
+}
