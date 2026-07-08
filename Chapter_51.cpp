@@ -150,6 +150,101 @@
 
 // Problem? Given the heads of two LL. FInd return the node at which the two list intersects.. if not return NULL;
 
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+
+// /////brutfoce method
+// void intersection1(Node *&head1,Node *&head2){
+//     Node *temp1 = head1;
+
+//     while(temp1 != nullptr){
+//         Node *temp2 = head2;
+
+//         while (temp2 != nullptr){
+//             if(temp1 == temp2){
+//                 cout<<temp1;
+//                 return;
+//             }
+//             temp2 = temp2->next;
+
+//         }
+//         temp1 = temp1->next;
+
+//     }
+//     cout<<"null";
+
+// }
+
+// ///best method is (but only works if the intersection is after the same dist from starting);
+// //but we can use this by some modification
+// //MODIFICATION: bring the temp pointer of bigger LL equivalent to smaller one by ((size of Big LL - that of smaller LL)) : Now shift the pointer of bigger LL the difference steps further
+// void intersection2(Node *&head1,Node *&head2){
+//     Node *temp1 = head1;
+//     Node *temp2 = head2;
+
+//     while(temp1 != nullptr && temp2 != nullptr){
+//         if(temp1 == temp2){
+//             cout<<temp1;
+//             return;
+//         }
+//         temp1 = temp1->next;
+//         temp2 = temp2->next;
+//     }
+//     cout<<"null";
+
+// }
+// void intersection3(Node *&head1,Node *&head2){
+
+// }
+// int main()
+// {
+//     Node *h11 = new Node(2);
+//     Node *h12 = new Node(3);
+//     Node *h13 = new Node(4);
+//     Node *h14 = new Node(5);
+//     Node *h15 = new Node(6);
+//     Node *h16 = new Node(1);
+
+//     Node *h21 = new Node(4);
+//     Node *h22 = new Node(5);
+//     Node *h23 = new Node(6);
+
+//     h11->next = h12;
+//     h12->next = h13;
+//     h13->next = h14;
+//     h14->next = h15;
+//     h15->next = h16;
+
+//     h21->next = h22;
+//     h22->next = h23;
+//     h23->next = h14;
+
+//     intersection1(h11 , h21);
+//     cout<<endl;
+//     intersection2(h11 , h21);
+//     return 0;
+// }
+
+// PROBLEM ? given two LL , both sorted. return single LL merged and sorted;
+
+// Problem ? given an array of k- linked list, each LL is sorted in ascending order. Merge all the LL into one sorted LL and return it.
+
+// SLOW FAST POINTER
+// fast pointer 2 node se aage badhega aur slow pointer 1 node se
+
+// Problem ? Find the middle element of the given Linked list without traversing it twice
+
 #include <iostream>
 using namespace std;
 class Node
@@ -163,71 +258,42 @@ public:
         next = nullptr;
     }
 };
-
-/////brutfoce method
-void intersection1(Node *&head1,Node *&head2){
-    Node *temp1 = head1;
-
-    while(temp1 != nullptr){
-        Node *temp2 = head2;
-
-        while (temp2 != nullptr){
-            if(temp1 == temp2){
-                cout<<temp1;
-                return;
-            }
-            temp2 = temp2->next;
-
-        }
-        temp1 = temp1->next;
-        
+void middle(Node *&head){
+    Node *slow = head;
+    Node *fast = head;
+    while(fast->next != nullptr && fast->next->next != nullptr){
+        slow = slow->next;
+        fast = fast->next->next;
     }
-    cout<<"null";
-
+    if(fast->next == nullptr){
+        cout<<slow->val;
+    }
+    else if(fast->next->next == nullptr){
+        cout<<slow->val;
+        cout<<" & "<<slow->next->val;
+    }
+}
+void insert_at_head(Node *&head, int val) // passing by reference as we have to make changes in the linked list.
+{
+    Node *new_node = new Node(val);
+    new_node->next = head;
+    head = new_node;
 }
 
-///best method is (but only works if the intersection is after the same dist from starting);
-void intersection2(Node *&head1,Node *&head2){
-    Node *temp1 = head1;
-    Node *temp2 = head2;
 
-    while(temp1 != nullptr && temp2 != nullptr){
-        if(temp1 == temp2){
-            cout<<temp1;
-            return;
-        }
-        temp1 = temp1->next;
-        temp2 = temp2->next;
-    }
-    cout<<"null";
-
-}
 int main()
 {
-    Node *h11 = new Node(2);
-    Node *h12 = new Node(3);
-    Node *h13 = new Node(4);
-    Node *h14 = new Node(5);
-    Node *h15 = new Node(6);
-    Node *h16 = new Node(1);
+    Node *head = nullptr;
+    insert_at_head(head, 1);
+    insert_at_head(head, 2);
+    insert_at_head(head, 3);
+    insert_at_head(head, 4);
+    insert_at_head(head, 5);
+    insert_at_head(head, 6);
+    insert_at_head(head, 7);
+    insert_at_head(head, 8);
 
-    Node *h21 = new Node(4);
-    Node *h22 = new Node(5);
-    Node *h23 = new Node(6);
-
-    h11->next = h12;
-    h12->next = h13;
-    h13->next = h14;
-    h14->next = h15;
-    h15->next = h16;
-
-    h21->next = h22;
-    h22->next = h23;
-    h23->next = h14;
-
-
-    intersection1(h11 , h21);
-    cout<<endl;
-    intersection2(h11 , h21);
+    middle(head);
     return 0;
+
 }
