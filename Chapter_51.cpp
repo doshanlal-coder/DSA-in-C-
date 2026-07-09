@@ -245,55 +245,157 @@
 
 // Problem ? Find the middle element of the given Linked list without traversing it twice
 
-#include <iostream>
-using namespace std;
-class Node
-{
-public:
-    int val;
-    Node *next;
-    Node(int val)
-    {
-        this->val = val;
-        next = nullptr;
-    }
-};
-void middle(Node *&head){
-    Node *slow = head;
-    Node *fast = head;
-    while(fast->next != nullptr && fast->next->next != nullptr){
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    if(fast->next == nullptr){
-        cout<<slow->val;
-    }
-    else if(fast->next->next == nullptr){
-        cout<<slow->val;
-        cout<<" & "<<slow->next->val;
-    }
-}
-void insert_at_head(Node *&head, int val) // passing by reference as we have to make changes in the linked list.
-{
-    Node *new_node = new Node(val);
-    new_node->next = head;
-    head = new_node;
-}
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+// void middle(Node *&head){
+//     Node *slow = head;
+//     Node *fast = head;
+//     while(fast->next != nullptr && fast->next->next != nullptr){
+//         slow = slow->next;
+//         fast = fast->next->next;
+//     }
+//     if(fast->next == nullptr){
+//         cout<<slow->val;
+//     }
+//     else if(fast->next->next == nullptr){
+//         cout<<slow->val;
+//         cout<<" & "<<slow->next->val;
+//     }
+// }
+// void insert_at_head(Node *&head, int val) // passing by reference as we have to make changes in the linked list.
+// {
+//     Node *new_node = new Node(val);
+//     new_node->next = head;
+//     head = new_node;
+// }
+
+// int main()
+// {
+//     Node *head = nullptr;
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 2);
+//     insert_at_head(head, 3);
+//     insert_at_head(head, 4);
+//     insert_at_head(head, 5);
+//     insert_at_head(head, 6);
+//     insert_at_head(head, 7);
+//     insert_at_head(head, 8);
+
+//     middle(head);
+//     return 0;
+
+// }
+
+/// Problem ? Given head of a LL, determine if the LL has a cycle in it. (USING SLOW AND FAST POINTER CONCEPT)
+
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
+// void cycle(Node *&head)
+// {
+//     Node *slow = head;
+//     Node *fast = head;
+//     while (fast->next != nullptr && fast->next->next != nullptr)
+//     {
+//         slow = slow->next;
+//         fast = fast->next->next;
+//         if (slow == fast)
+//         {
+//             cout << "CYCLE";
+//             return;
+//         }
+//     }
+//     cout << "NO CYCLE";
+//     return;
+// }
+// void insert_at_head(Node *&head, int val) // passing by reference as we have to make changes in the linked list.
+// {
+//     Node *new_node = new Node(val);
+//     new_node->next = head;
+//     head = new_node;
+// }
+
+// int main()
+// {
+//     Node *head = nullptr;
+//     insert_at_head(head, 1);
+//     insert_at_head(head, 2);
+//     insert_at_head(head, 3);
+//     insert_at_head(head, 4);
+//     insert_at_head(head, 5);
+//     insert_at_head(head, 6);
+//     insert_at_head(head, 7);
+//     insert_at_head(head, 8);
+
+//     cycle(head); //Output : No cycle
 
 
-int main()
-{
-    Node *head = nullptr;
-    insert_at_head(head, 1);
-    insert_at_head(head, 2);
-    insert_at_head(head, 3);
-    insert_at_head(head, 4);
-    insert_at_head(head, 5);
-    insert_at_head(head, 6);
-    insert_at_head(head, 7);
-    insert_at_head(head, 8);
+//     Node *n1 = new Node(1);
+//     Node *n2 = new Node(2);
+//     Node *n3 = new Node(3);
+//     Node *n4 = new Node(4);
+//     Node *n5 = new Node(5);
+//     Node *n6 = new Node(6);
 
-    middle(head);
-    return 0;
+//     n1->next = n2;
+//     n2->next = n3;
+//     n3->next = n4;
+//     n4->next = n5;
+//     n5->next = n6;
+//     n6->next = n3;
 
-}
+//     cycle(n1); //Output : Cycle
+
+
+//     return 0;
+// }
+
+
+
+//Given a LL, check if it is a palindrome or not.
+//Method 1> Sol, store the reverse of the elements and then check element by element;
+//MEthod 2> find the middle element and reverse only the second part of the LL after thet middle element: then compare ele by ele
+
+
+
+
+
+
+
+
+
+
+
+///REARRANGEMENT OF NODES IN A LIST.
+//Problem? given  the head of a LL, rotate the list to right by k places:
+
+
+
+
+
+
+
+
+
+//INCOMPLETE...
