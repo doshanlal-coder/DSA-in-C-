@@ -172,3 +172,12 @@
 
 ///////////////////////////////////////////////////////////////
 //Implementation of Stack using Linked List...
+
+
+
+//Head --- top
+//add element at start
+
+#include <iostream>
+using namespace std;
+
