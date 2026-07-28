@@ -180,4 +180,37 @@
 
 #include <iostream>
 using namespace std;
+class Node {
+    public:
+    int data;
+    Node *next;
+    Node (int data){
+        this->data = data;
+        next = nullptr;
+    }
 
+};
+
+class Stack{
+    Node *head;
+    int capacity;
+    int currentSize;
+
+    public:
+    Stack(int c){
+        this->capacity = c;
+        this->currentSize = 0;
+        head = nullptr;
+    }
+    bool isEmpty(){
+        return this->head = nullptr;
+    }
+    bool isFull(){
+        return this->currentSize = this->capacity;
+    }
+    void push(int data){
+        Node *new_node = new Node(data);
+        
+
+    }
+};
