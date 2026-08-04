@@ -143,66 +143,129 @@ using namespace std;
 // }
 
 //
-#include <iostream>
-using namespace std;
-class Node
-{
-public:
-    int val;
-    Node *next;
-    Node(int val)
-    {
-        this->val = val;
-        next = nullptr;
-    }
-};
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         next = nullptr;
+//     }
+// };
 
-/////brutfoce method
-void intersection1(Node *&head1,Node *&head2){
-    Node *temp1 = head1;
+// /////brutfoce method
+// void intersection1(Node *&head1,Node *&head2){
+//     Node *temp1 = head1;
 
-    while(temp1 != nullptr){
-        Node *temp2 = head2;
+//     while(temp1 != nullptr){
+//         Node *temp2 = head2;
 
-        while (temp2 != nullptr){
-            if(temp1 == temp2){
-                cout<<temp1->val;
-                return;
-            }
-            temp2 = temp2->next;
+//         while (temp2 != nullptr){
+//             if(temp1 == temp2){
+//                 cout<<temp1->val;
+//                 return;
+//             }
+//             temp2 = temp2->next;
 
-        }
-        temp1 = temp1->next;
+//         }
+//         temp1 = temp1->next;
         
-    }
-    cout<<"null";
+//     }
+//     cout<<"null";
 
-}
+// }
 
-int main()
-{
-    Node *h11 = new Node(2);
-    Node *h12 = new Node(3);
-    Node *h13 = new Node(4);
-    Node *h14 = new Node(5);
-    Node *h15 = new Node(6);
-    Node *h16 = new Node(1);
+// int main()
+// {
+//     Node *h11 = new Node(2);
+//     Node *h12 = new Node(3);
+//     Node *h13 = new Node(4);
+//     Node *h14 = new Node(5);
+//     Node *h15 = new Node(6);
+//     Node *h16 = new Node(1);
 
-    Node *h21 = new Node(4);
-    Node *h22 = new Node(5);
-    Node *h23 = new Node(6);
+//     Node *h21 = new Node(4);
+//     Node *h22 = new Node(5);
+//     Node *h23 = new Node(6);
 
-    h11->next = h12;
-    h12->next = h13;
-    h13->next = h14;
-    h14->next = h15;
-    h15->next = h16;
+//     h11->next = h12;
+//     h12->next = h13;
+//     h13->next = h14;
+//     h14->next = h15;
+//     h15->next = h16;
 
-    h21->next = h22;
-    h22->next = h23;
-    h23->next = h13;
+//     h21->next = h22;
+//     h22->next = h23;
+//     h23->next = h13;
 
 
-    intersection1(h11 , h21);
-    return 0;
+//     intersection1(h11 , h21);
+//     return 0;
+// }
+
+
+
+
+//Binary Search
+
+// #include <iostream>
+// using namespace std;
+// #include <vector>
+
+// int binarySearch(vector<int> &input, int target)
+// {
+//     // define search space
+//     int lo = 0;                // start of search space
+//     int hi = input.size() - 1; // end of search space
+
+//     while (lo <= hi)
+//     {
+//         // calc midpoint for the search space
+//         int mid = (lo + hi) / 2;
+//         if (input[mid] == target)
+//             return mid;
+//         else if (input[mid] < target)
+//         {
+//             // discard the left of mid
+//             lo = mid + 1;
+//         }
+//         else
+//         {
+//             // discard the right of mid
+//             hi = mid - 1;
+//         }
+//     }
+//     return -1;
+// }
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+
+//     vector<int> input(n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> input[i];
+//     }
+//     int target;
+//     cin >> target;
+//     cout << binarySearch(input, target) << " ";
+//     return 0;
+// }
+
+
+
+
+////Binary search 
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int bs(vector<int> &input, int target){
+
 }
