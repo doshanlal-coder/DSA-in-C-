@@ -98,3 +98,89 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 //MEMBER FUNCTION
+// size();
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+// UNORDERED SET 
+// #include <undordered_set>     elements are stored in random order
+//  element search is done by hashing
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+//MULITSET
+
+//Multiset can be used to store elements in ordered manner
+//duplicate elements will be stored as many time
+
+
+
+// #include <iostream>
+// using namespace std;
+// #include <set>
+// int main (){
+//     multiset <int> ms;   
+// }
+
+
+//EG 
+
+// #include <iostream>
+// using namespace std;
+// #include <set>
+// int main (){
+//     multiset <int> ms; 
+    
+//     ms.insert(1);
+//     ms.insert(2);
+//     ms.insert(31);
+//     ms.insert(1);
+//     ms.insert(13);
+//     ms.insert(14);
+//     ms.insert(16);
+//     ms.insert(14);
+//     ms.insert(10);
+
+//     for(auto value:ms){
+//         cout<<value<<" ";
+//     }
+// }
+
+
+//Member Function of Multiset
+
+//1> find();   lowerbound of element searched if found else end iterator
+
+//eg.  find(2); in  1 2 2 3 4 5 5   output: 1
+
+
+
+//2> count();  returns number of occurences
+
+
+//3> lower_bound();  iterator pointing to the first occurence of val
+//4> upper_bound();  pointing to the next greater value
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////
+//UNORDERED MULTISET
+///it allowes duplicate values but in random order
+
+//  #include <unordered_set>
+//  unordered_multiset<int> ums1;
