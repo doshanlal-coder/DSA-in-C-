@@ -37,3 +37,23 @@
 /////////////////////////////////////////////////////////////////////
 
 //COLLISION
+//When two element have same hash value
+
+///(M) Separate Chaining: Use linked list next two the element having same hash values
+
+///(M) Closed hashing
+//(1) Linear Probing  ;  we store the element at position  h(k)+i   0<=i=<9
+
+//(2) Quadratic Probing  ;  we store the element at position  h(k)+i^2  0<=i=<9 : it prevent formation of cluster
+
+//(3) Double hashing Probing  ;  
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+//LOAD FACTOR = (n/m) = it gives us average entries in a bucket
+
+// where n = number of elements
+//and m =  number of bucket we have
+
