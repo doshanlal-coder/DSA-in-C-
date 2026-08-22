@@ -57,3 +57,17 @@
 // where n = number of elements
 //and m =  number of bucket we have
 
+
+
+////////////////// IMPLEMENTATION
+
+#include <iostream>
+using namespace std;
+#include <vector>
+#include <list>
+
+
+class Hashing{
+    public:
+    
+};
