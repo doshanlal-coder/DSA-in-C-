@@ -59,15 +59,3 @@
 
 
 
-////////////////// IMPLEMENTATION
-
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <list>
-
-
-class Hashing{
-    public:
-    
-};
