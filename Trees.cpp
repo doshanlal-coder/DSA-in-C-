@@ -316,30 +316,123 @@
 
 //QUESTION>> Find Maximum depth of binary tree == height of binary tree == total number of level
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// struct Node {
+//     int val;
+//     struct Node *left;
+//     struct Node *right;
+//     Node (int val){
+//         this->val = val;
+//         left = right = nullptr;
+//     }
+// };
+// int maxHeight(Node *root){
+//     if(root == nullptr) return 0;
+//     return 1 + max(maxHeight(root->left), maxHeight(root->right));
+
+// }
+// int main(){
+//     struct Node *root = new Node(1);
+
+//     root->left = new Node(2);
+//     root->right = new Node(3);
+
+//     root->left->left = new Node(4);
+//     root->left->left->right = new Node(5);
+//     root->left->left->right->right = new Node(6);
+
+//     cout<< maxHeight(root);
+//     return 0;
+// }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Question > Checking whether the tree is balanced or not = left height and right height should be equal
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// struct Node{
+//     int val;
+//     struct Node *left;
+//     struct Node *right;
+//     Node(int val){
+//         this->val = val;
+//         left = right = nullptr;
+//     }
+// };
+// int height(Node *root){
+//     if(root == nullptr) return 0;
+
+//     return 1 + max(height(root->left), height(root->right));
+// }
+// bool balanced(Node *root){
+
+//     if(root == nullptr) return -1;
+//     if(height(root->left) == height(root->right)) return true;
+//     else return false;
+
+// }
+
+// int main(){
+    // struct Node *root = new Node(1);
+
+    // root->left = new Node(2);
+    // root->right = new Node(2);
+    
+    // root->left->left = new Node(4);
+    // root->left->right = new Node(4);
+    // root->right->left = new Node(4);
+    // root->right->right = new Node(4);
+
+//     cout<<balanced(root);
+    
+// }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//DIAMETER OF A TREE == Nothing but the maximum distance bw any two nodes
+
+//Question> Find the maximum diameter of the given tree
+
 #include <bits/stdc++.h>
 using namespace std;
 struct Node {
     int val;
     struct Node *left;
     struct Node *right;
-    Node (int val){
+    Node(int val ){
         this->val = val;
         left = right = nullptr;
     }
 };
-void maxHeight(Node *root){
-    int mh = 0;
-    if(root == nullptr) return ;
+int findMax(Node *root, int &dia){
+    if(root == nullptr) return 0;
+    
+    int lh = findMax(root->left, dia);
+    int rh = findMax(root->right, dia);
+
+    dia = max(dia, lh + rh);
+    return 1 + max(lh, rh);
 }
 int main(){
     struct Node *root = new Node(1);
 
     root->left = new Node(2);
-    root->right = new Node(3);
-
+    root->right = new Node(2);
+    
     root->left->left = new Node(4);
-    root->left->left->right = new Node(5);
+    root->left->right = new Node(4);
+    root->right->left = new Node(4);
+    root->right->right = new Node(4);
 
-    maxHeight(root);
+    int dia = 0;
+    findMax(root, dia);
+    cout<<dia;
     return 0;
 }
