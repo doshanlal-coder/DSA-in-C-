@@ -314,7 +314,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//QUESTION>> Find Maximum depth of binary tree == height of binary tree == total number of level
+// QUESTION>> Find Maximum depth of binary tree == height of binary tree == total number of level
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -346,11 +346,10 @@
 //     return 0;
 // }
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Question > Checking whether the tree is balanced or not = left height and right height should be equal
+// Question > Checking whether the tree is balanced or not = left height and right height should be equal
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -377,62 +376,172 @@
 // }
 
 // int main(){
-    // struct Node *root = new Node(1);
+// struct Node *root = new Node(1);
 
-    // root->left = new Node(2);
-    // root->right = new Node(2);
-    
-    // root->left->left = new Node(4);
-    // root->left->right = new Node(4);
-    // root->right->left = new Node(4);
-    // root->right->right = new Node(4);
+// root->left = new Node(2);
+// root->right = new Node(2);
+
+// root->left->left = new Node(4);
+// root->left->right = new Node(4);
+// root->right->left = new Node(4);
+// root->right->right = new Node(4);
 
 //     cout<<balanced(root);
-    
+
 // }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// DIAMETER OF A TREE == Nothing but the maximum distance bw any two nodes
+
+// Question> Find the diameter of the given tree
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// struct Node {
+//     int val;
+//     struct Node *left;
+//     struct Node *right;
+//     Node(int val ){
+//         this->val = val;
+//         left = right = nullptr;
+//     }
+// };
+// int findMax(Node *root, int &dia){
+//     if(root == nullptr) return 0;
+
+//     int lh = findMax(root->left, dia);
+//     int rh = findMax(root->right, dia);
+
+//     dia = max(dia, lh + rh);
+//     return 1 + max(lh, rh);
+// }
+// int main(){
+//     struct Node *root = new Node(1);
+
+//     root->left = new Node(2);
+//     root->right = new Node(2);
+
+//     root->left->left = new Node(4);
+//     root->left->right = new Node(4);
+//     root->right->left = new Node(4);
+//     root->right->right = new Node(4);
+
+//     int dia = 0;
+//     findMax(root, dia);
+//     cout<<dia;
+//     return 0;
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// struct Node
+// {
+//     int val;
+//     struct Node *left;
+//     struct Node *right;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         left = right = nullptr;
+//     }
+// };
+// int diameter(Node *root, int &dia)
+// {
+//     if(root == nullptr) return 0;
+
+//     int lh = diameter(root->left , dia);
+//     int rh = diameter(root->right , dia);
+
+//     dia = max(dia, lh + rh);
+//     return 1+max(lh, rh);
+// }
+// int main()
+// {
+//     struct Node *root = new Node(1);
+//     root->left = new Node(2);
+//     root->right = new Node(3);
+
+//     root->left->left = new Node(4);
+//     root->left->left->right = new Node(8);
+//     root->left->right = new Node(5);
+//     root->left->right->right = new Node(9);
+
+//     root->right->left = new Node(6);
+//     root->right->left->left = new Node(10);
+//     root->right->right = new Node(7);
+//     root->right->right->left = new Node(11);
+
+//     int dia = 0;
+//     diameter(root, dia);
+//     cout<<dia+1;
+//     return 0;
+// }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Question> find the maximum sum path:
 
-//DIAMETER OF A TREE == Nothing but the maximum distance bw any two nodes
+// #include <bits/stdc++.h>
+// using namespace std;
+// struct Node
+// {
+//     int val;
+//     struct Node *left;
+//     struct Node *right;
+//     Node(int val)
+//     {
+//         this->val = val;
+//         left = right = nullptr;
+//     }
+// };
+// int maxPathLength(Node *root, int &maxi){
+//     if(root == nullptr) return 0;
 
-//Question> Find the maximum diameter of the given tree
+//     int leftSum = maxPathLength(root->left, maxi);
+//     int rightSum = maxPathLength(root->right, maxi);
 
-#include <bits/stdc++.h>
-using namespace std;
-struct Node {
-    int val;
-    struct Node *left;
-    struct Node *right;
-    Node(int val ){
-        this->val = val;
-        left = right = nullptr;
-    }
-};
-int findMax(Node *root, int &dia){
-    if(root == nullptr) return 0;
-    
-    int lh = findMax(root->left, dia);
-    int rh = findMax(root->right, dia);
+//     maxi = max(maxi, leftSum+rightSum+ root->val);
+//     return root->val + max(leftSum, rightSum);
 
-    dia = max(dia, lh + rh);
-    return 1 + max(lh, rh);
-}
-int main(){
-    struct Node *root = new Node(1);
+// }
 
-    root->left = new Node(2);
-    root->right = new Node(2);
-    
-    root->left->left = new Node(4);
-    root->left->right = new Node(4);
-    root->right->left = new Node(4);
-    root->right->right = new Node(4);
+// int main()
+// {
+//     struct Node *root = new Node(1);
+//     root->left = new Node(2);
+//     root->right = new Node(3);
 
-    int dia = 0;
-    findMax(root, dia);
-    cout<<dia;
-    return 0;
-}
+//     root->left->left = new Node(4);
+//     root->left->left->right = new Node(8);
+//     root->left->right = new Node(5);
+//     root->left->right->right = new Node(9);
+
+//     root->right->left = new Node(6);
+//     root->right->left->left = new Node(10);
+//     root->right->right = new Node(7);
+//     root->right->right->left = new Node(11);
+//     int maxi = 0;
+//     maxPathLength(root, maxi);
+//     cout<<maxi; // gives the maximum sum path
+//     return 0;
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ARRAY REPRESENTATION OF A BINARY TREE
+
+// FOR 0- BASED INDEXING
+// Arr = { root = i, left child = 2i+1, right child = 2i+2}
+
+// FOR 1- BASED INDEXING
+// Arr = { root = i, left child = 2i, right child = 2i+1}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
