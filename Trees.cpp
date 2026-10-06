@@ -545,3 +545,72 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <bits/stdc++.h>
+using namespace std;
+struct TreeNode
+{
+    int data;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    TreeNode(int val)
+    {
+        data = val;
+        left = right = nullptr;
+    }
+};
+class Solution
+{
+public:
+    void fun(TreeNode *root, vector<vector<int>> &v)
+    {
+        if (root == nullptr)
+            return;
+        queue<TreeNode *> q;
+
+        q.push(root);
+        q.push(nullptr);
+        int i = 0, j = 0;
+        while (!q.empty())
+        {
+            TreeNode *temp = q.front();
+            q.pop();
+            if (temp != nullptr)
+            {
+                v[i].push_back(temp->data);
+            }
+            else
+            {
+                i++;
+            }
+            if (temp->left != nullptr)
+                q.push(temp->left);
+            if (temp->right != nullptr)
+                q.push(temp->right);
+        }
+    }
+    vector<vector<int>> levelOrder(TreeNode *root)
+    {
+        vector<vector<int>> v;
+        fun(root, v);
+        return v;
+    }
+};
+
+int main()
+{
+    struct TreeNode *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->left->left = new TreeNode(3);
+    root->left->right = new TreeNode(3);
+
+    root->right = new TreeNode(2);
+    root->right->left = new TreeNode(3);
+    Solution s;
+    vector<vector<int>> v = s.levelOrder(root);
+    for(int i = 0; i< v.size() ; i++){
+        for(int j = 0; j<v[i].size() ; j++){
+            cout<<v[i][j]<<" ";
+        }
+    }
+}
