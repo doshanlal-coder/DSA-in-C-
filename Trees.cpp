@@ -546,68 +546,104 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// struct Node
+// {
+//     int data;
+//     struct Node *left;
+//     struct Node *right;
+//     Node(int val)
+//     {
+//         data = val;
+//         left = right = nullptr;
+//     }
+// };
+// class Solution
+// {
+// public:
+//     void fun(Node *root, vector<vector<int>> &v)
+//     {
+//         if (root == nullptr)
+//             return;
+//         queue<Node *> q;
+
+//         q.push(root);
+//         q.push(nullptr);
+//         int i = 0, j = 0;
+//         while (!q.empty())
+//         {
+//             Node *temp = q.front();
+//             q.pop();
+//             if (temp != nullptr)
+//             {
+//                 v[i].push_back(temp->data);
+//             }
+//             else
+//             {
+//                 i++;
+//             }
+//             if (temp->left != nullptr)
+//                 q.push(temp->left);
+//             if (temp->right != nullptr)
+//                 q.push(temp->right);
+//         }
+//     }
+//     vector<vector<int>> levelOrder(Node *root)
+//     {
+//         vector<vector<int>> v;
+//         fun(root, v);
+//         return v;
+//     }
+// };
+
+// int main()
+// {
+//     struct Node *root = new Node(1);
+//     root->left = new Node(2);
+//     root->left->left = new Node(3);
+//     root->left->right = new Node(3);
+
+//     root->right = new Node(2);
+//     root->right->left = new Node(3);
+//     Solution s;
+//     vector<vector<int>> v = s.levelOrder(root);
+//     for(int i = 0; i< v.size() ; i++){
+//         for(int j = 0; j<v[i].size() ; j++){
+//             cout<<v[i][j]<<" ";
+//         }
+//     }
+// }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include <bits/stdc++.h>
 using namespace std;
-struct TreeNode
-{
-    int data;
-    struct TreeNode *left;
-    struct TreeNode *right;
-    TreeNode(int val)
-    {
-        data = val;
+struct Node{
+    int val;
+    struct Node*left;
+    struct Node*right;
+    Node(int val){
+        this->val = val;
         left = right = nullptr;
     }
-};
-class Solution
-{
-public:
-    void fun(TreeNode *root, vector<vector<int>> &v)
-    {
-        if (root == nullptr)
-            return;
-        queue<TreeNode *> q;
 
-        q.push(root);
-        q.push(nullptr);
-        int i = 0, j = 0;
-        while (!q.empty())
-        {
-            TreeNode *temp = q.front();
-            q.pop();
-            if (temp != nullptr)
-            {
-                v[i].push_back(temp->data);
-            }
-            else
-            {
-                i++;
-            }
-            if (temp->left != nullptr)
-                q.push(temp->left);
-            if (temp->right != nullptr)
-                q.push(temp->right);
-        }
-    }
-    vector<vector<int>> levelOrder(TreeNode *root)
-    {
-        vector<vector<int>> v;
-        fun(root, v);
-        return v;
-    }
 };
-
+vector <vector <int>> fun(Node *root){
+    vector <vector <int>> ans;
+    queue <int> q;
+    if(root == nullptr) return
+}
 int main()
 {
-    struct TreeNode *root = new TreeNode(1);
-    root->left = new TreeNode(2);
-    root->left->left = new TreeNode(3);
-    root->left->right = new TreeNode(3);
+    struct Node *root = new Node(1);
+    root->left = new Node(2);
+    root->left->left = new Node(3);
+    root->left->right = new Node(3);
 
-    root->right = new TreeNode(2);
-    root->right->left = new TreeNode(3);
-    Solution s;
-    vector<vector<int>> v = s.levelOrder(root);
+    root->right = new Node(2);
+    root->right->left = new Node(3);
+    vector<vector<int>> v = fun(root);
     for(int i = 0; i< v.size() ; i++){
         for(int j = 0; j<v[i].size() ; j++){
             cout<<v[i][j]<<" ";
