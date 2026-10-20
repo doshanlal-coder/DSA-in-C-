@@ -617,36 +617,50 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <bits/stdc++.h>
-using namespace std;
-struct Node{
-    int val;
-    struct Node*left;
-    struct Node*right;
-    Node(int val){
-        this->val = val;
-        left = right = nullptr;
-    }
+// Question: find the node having the value equal to the given data and returning the complete sub binary tree
 
-};
-vector <vector <int>> fun(Node *root){
-    vector <vector <int>> ans;
-    queue <int> q;
-    if(root == nullptr) return
-}
-int main()
-{
-    struct Node *root = new Node(1);
-    root->left = new Node(2);
-    root->left->left = new Node(3);
-    root->left->right = new Node(3);
+// #include <bits/stdc++.h>
+// using namespace std;
+// struct Node
+// {
+//     int data;
+//     struct Node *left;
+//     struct Node *right;
+//     Node(int data)
+//     {
+//         this->data = data;
+//         left = right = nullptr;
+//     }
+// };
+// class Solution
+// {
+// public:
+//     Node *searchBST(Node *root, int val)
+//     {
+//         if (root == nullptr)
+//             return nullptr;
 
-    root->right = new Node(2);
-    root->right->left = new Node(3);
-    vector<vector<int>> v = fun(root);
-    for(int i = 0; i< v.size() ; i++){
-        for(int j = 0; j<v[i].size() ; j++){
-            cout<<v[i][j]<<" ";
-        }
-    }
-}
+//         if (root->data == val)
+//         {
+//             return root;
+//         }
+//         if (val < root->data)
+//         {
+//             return searchBST(root->left, val);
+//         }
+//         return searchBST(root->right, val);
+//     }
+// };
+// int main()
+// {
+//     struct Node *root = new Node(4);
+//     root->left = new Node(2);
+//     root->right = new Node(7);
+//     root->left->left = new Node(1);
+//     root->left->right = new Node(3);
+//     Solution s;
+//     s.searchBST(root, 7);
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
